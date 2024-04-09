@@ -4,7 +4,7 @@ Submitted by: **Anthony Lau**
 
 This web app: **This app allows you to create a team of VALORANT characters using Supabase**
 
-Time spent: **3** hours spent in total
+Time spent: **3.5** hours spent in total
 
 ## Required Features
 
@@ -15,7 +15,7 @@ The following **required** functionality is completed:
 - [x] **The site displays a summary page of all the user's added crewmates**
 - [ ] **A previously created crewmate can be updated from the crewmate list**
 - [ ] **A previously created crewmate can be deleted from the crewmate list**
-- [ ] **Each crewmate has a direct, unique link to an info page about them**
+- [x] **Each crewmate has a direct, unique link to an info page about them**
 
 The following **optional** features are implemented:
 

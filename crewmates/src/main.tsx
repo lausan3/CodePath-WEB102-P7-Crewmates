@@ -17,12 +17,12 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path='/' element={<Layout/>}>
           <Route index={true} element={<App/>} />
-          <Route index={false} path='/create' element={<CreateAgent/>} />
-          <Route index={false} path='/list' element={<ListAgent/>}>
+          <Route path='/create' element={<CreateAgent/>} />
+          <Route path='/list/*' element={<ListAgent/>} />
             <Route path='/list/:id' element={<AgentDetail/>} />
-          </Route>
+
+          <Route path='*' element={<RouteNotFound/>} />
         </Route>
-        <Route path='*' element={<RouteNotFound/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

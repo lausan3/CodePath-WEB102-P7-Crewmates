@@ -10,6 +10,8 @@
 :root {
   --sidebar-width: 13vw;
   --main-container-width: calc(100vw - var(--sidebar-width) - 60px);
+
+  --card-link-hover-color: rgb(114, 6, 61);
 }
 
 .layout {
@@ -41,7 +43,7 @@
   border-radius: 10px;
 
   transition: 
-    background-color 0.25s;
+    background-color 250ms;
 }
 
 .sidebar-link:hover {
@@ -93,6 +95,14 @@
 }
 
 /* CARDS */
+
+.card-link {
+  transition: color 250ms;
+}
+
+.card-link:hover {
+  color: var(--card-link-hover-color);
+}
 
 .card-section {
   width: 200px;

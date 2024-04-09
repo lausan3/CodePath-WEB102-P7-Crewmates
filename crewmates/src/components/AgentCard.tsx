@@ -4,7 +4,7 @@ import { DBData } from "../interfaces/interfaces"
 
 const AgentCard = ({id, name, description, role}: DBData) => {
   return (
-    <Link to={`/link/${id}`}>
+    <Link className='card-link' to={`/list/${id}`}>
       <section className="card-section">
         <h2>{name}</h2>
         <h3>{description}</h3>

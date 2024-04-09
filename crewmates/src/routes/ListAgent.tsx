@@ -47,6 +47,7 @@ const ListAgent = () => {
           agentData.length > 0 ? agentData.map( (agent, index) => {
             return (
               <AgentCard 
+              key={index}
                 {...agent}
               />
             )
