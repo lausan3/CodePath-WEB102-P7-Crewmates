@@ -1,24 +1,12 @@
 import { useState } from 'react'
 import { supabase } from '../client'
+import { handleChange, handleOptionChange } from '../interfaces/utils';
+
 import AgentForm from '../components/AgentForm';
 
 const CreateAgent = () => {
   const [formData, setFormData] = useState({name: "", description: ""});
   const [selectedOption, setSelectedOption] = useState("");
-
-  const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedOption(event.target.value);
-  };
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const {name, value} = event.target;
-    setFormData( (prev) => {
-        return {
-            ...prev,
-            [name]:value,
-        }
-    })
-  }
 
   const createAgent = async (event: React.MouseEvent<HTMLInputElement>) => {
     event.preventDefault();
@@ -43,11 +31,13 @@ const CreateAgent = () => {
       .select();
 
     alert("Successfully created an agent!");
+
+    window.location.reload();
   }
 
   return (
     <div className="main-ctn">
-      <AgentForm data={formData} selectedOption={selectedOption} handleChange={handleChange} handleOptionChange={handleOptionChange} createAgent={createAgent}/>
+      <AgentForm data={formData} selectedOption={selectedOption} handleChange={(event) => handleChange(event, setFormData)} handleOptionChange={(event) => handleOptionChange(event, setSelectedOption)} createAgent={createAgent}/>
     </div>
   )
 }

@@ -42,20 +42,23 @@ const ListAgent = () => {
   return (
     <div className="main-ctn">
       <h3>List</h3>
-      <div className="list-ctn">
-        {
-          agentData.length > 0 ? agentData.map( (agent, index) => {
-            return (
-              <AgentCard 
-              key={index}
+      <div className="center-box">
+        <div className="list-ctn">
+          {
+            
+            agentData.length > 0 ? agentData.map( (agent, index) => {
+              return (
+                <AgentCard 
+                key={index}
                 {...agent}
-              />
-            )
-          }) 
-          :
-          null
-          // <p>No data...</p>
-        }
+                />
+              )
+            }) 
+            :
+            null
+            // <p>No data...</p>
+          }
+        </div>
       </div>
     </div>
   )

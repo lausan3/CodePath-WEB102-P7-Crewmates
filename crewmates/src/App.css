@@ -91,7 +91,7 @@
   column-gap: 30px;
   row-gap: 30px;
 
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 /* CARDS */
@@ -106,7 +106,7 @@
 
 .card-section {
   width: 200px;
-  height: 350px;
+  height: 250px;
 
   flex: 1;
 
@@ -117,3 +117,6 @@
 
 /* EXTRA */
 
+.center-box {
+  align-items: center;
+}
