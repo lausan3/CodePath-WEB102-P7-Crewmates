@@ -19,7 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route index={true} element={<App/>} />
           <Route index={false} path='/create' element={<CreateAgent/>} />
           <Route index={false} path='/list' element={<ListAgent/>}>
-            <Route index={false} path='/list/:id' element={<AgentDetail/>} />
+            <Route path='/list/:id' element={<AgentDetail/>} />
           </Route>
         </Route>
         <Route path='*' element={<RouteNotFound/>} />

@@ -80,9 +80,28 @@
 }
 
 
+/* LIST AGENT */
+
+.list-ctn {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 30px;
+  row-gap: 30px;
+
+  justify-content: space-between;
+}
+
 /* CARDS */
 
 .card-section {
+  width: 200px;
+  height: 350px;
+
+  flex: 1;
+
+  padding: 1.5rem 2rem;
+
   background-color: rgba(139, 160, 178, 0.759);
 }
 

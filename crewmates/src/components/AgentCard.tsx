@@ -1,16 +1,16 @@
-interface AgentCardProps {
-  data: any
-}
+import { Link } from "react-router-dom"
+import { DBData } from "../interfaces/interfaces"
 
-const AgentCard = ({data}: AgentCardProps) => {
+
+const AgentCard = ({id, name, description, role}: DBData) => {
   return (
-    <div className="main-ctn">
+    <Link to={`/link/${id}`}>
       <section className="card-section">
-        <h2>{data.name}</h2>
-        <h2>{data.description}</h2>
-        <h2>Role: {data.role}</h2>
+        <h2>{name}</h2>
+        <h3>{description}</h3>
+        <h3>Role: {role}</h3>
       </section>
-    </div>
+    </Link>
   )
 }
 
