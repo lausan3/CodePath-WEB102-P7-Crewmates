@@ -4,7 +4,7 @@ Submitted by: **Anthony Lau**
 
 This web app: **This app allows you to create a team of VALORANT characters using Supabase**
 
-Time spent: **3.5** hours spent in total
+Time spent: **3.66** hours spent in total
 
 ## Required Features
 

@@ -21,6 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path='/list/*' element={<ListAgent/>} />
             <Route path='/list/:id' element={<AgentDetail/>} />
 
+          <Route path='/notfound' element={<RouteNotFound/>} />
           <Route path='*' element={<RouteNotFound/>} />
         </Route>
       </Routes>

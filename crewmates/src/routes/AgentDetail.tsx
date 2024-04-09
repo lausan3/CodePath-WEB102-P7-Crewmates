@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { supabase } from "../client";
 
 import { AgentData } from "../interfaces/interfaces";
@@ -8,6 +8,7 @@ const AgentDetail = () => {
   const params = useParams();
   const [agentData, setAgentData] = useState<AgentData>({name: "", description: "", role: ""});
   const agentId = params.id;
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,8 +17,11 @@ const AgentDetail = () => {
         .select()
         .eq('id', agentId);
 
-        if (data === null) {
+        console.log(data);
+
+        if (data === null || data.length === 0) {
           console.error("Error fetching data from Agents");
+          navigate('/notfound');
         } else {
           setAgentData(data[0]);
         }
