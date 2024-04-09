@@ -3,10 +3,10 @@ interface AgentFormProps {
   selectedOption: string;
   handleChange: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   handleOptionChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  createAgent: (event: React.MouseEvent<HTMLInputElement, MouseEvent>) => void;
+  submit: (event: React.MouseEvent<HTMLInputElement, MouseEvent>) => void;
 }
 
-const AgentForm = ({data, selectedOption, handleChange, handleOptionChange, createAgent}: AgentFormProps) => {
+const AgentForm = ({data, selectedOption, handleChange, handleOptionChange, submit}: AgentFormProps) => {
   return (
     <div className="main-ctn">
       <form className='create-form'>
@@ -52,7 +52,7 @@ const AgentForm = ({data, selectedOption, handleChange, handleOptionChange, crea
         />
         Sentinel
 
-        <input type="submit" value="Submit" onClick={createAgent} />
+        <input type="submit" value="Submit" onClick={submit} />
       </form>
     </div>
   )

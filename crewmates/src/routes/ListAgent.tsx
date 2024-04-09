@@ -45,7 +45,6 @@ const ListAgent = () => {
       <div className="center-box">
         <div className="list-ctn">
           {
-            
             agentData.length > 0 ? agentData.map( (agent, index) => {
               return (
                 <AgentCard 
