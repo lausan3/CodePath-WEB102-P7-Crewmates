@@ -20,11 +20,12 @@ const ListAgent = () => {
       } else {
         setAgentData(data);
       }
+      
+      setIsLoading(false);
     }
 
     fetchData().catch(console.error);
 
-    setIsLoading(false);
   }, [])
 
   useEffect(() => {

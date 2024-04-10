@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { supabase } from "../client";
 
 import { AgentData } from "../interfaces/interfaces";
@@ -9,6 +9,7 @@ import { handleChange, handleOptionChange } from "../interfaces/utils";
 const EditAgent = () => {
   const params = useParams();
   const agentId = params.id;
+  const navigate = useNavigate();
   const [formData, setFormData] = useState<AgentData>({ name: "", description: "", role: "" });
   const [selectedOption, setSelectedOption] = useState("");
 
@@ -31,33 +32,57 @@ const EditAgent = () => {
     fetchData().catch(console.error);
   }, []);
 
-  const editAgent = async () => {
+  const editAgent = async (event: React.MouseEvent<HTMLInputElement>) => {
+    event.preventDefault();
+
+    const insertData: { name?: string; description?: string; role?: string } = {};
+
+    if (formData.name !== "") {
+      insertData.name = formData.name;
+    }
+
+    if (formData.description !== "") {
+      insertData.description = formData.description;
+    }
+
+    if (selectedOption !== "") {
+      insertData.role = selectedOption;
+    }
+
+    console.log(insertData);
+
     await supabase
       .from('Agents')
-      .update(formData)
+      .update(insertData)
       .eq('id', agentId);
+
+    navigate("/list");
   }
 
   const deleteAgent = async () => {
     await supabase
       .from('Agents')
       .delete()
-      .eq('id', agentId)
+      .eq('id', agentId);
+
+    navigate("/list");
   }
 
   return (
     <div className="main-ctn">
-      <AgentForm
-        data={formData}
-        selectedOption={selectedOption}
-        handleChange={(event) => handleChange(event, setFormData)}
-        handleOptionChange={(event) => handleOptionChange(event, setSelectedOption)}
-        submit={editAgent}
-      />
-      <button 
-        className="edit-deletebtn"
-        onClick={deleteAgent}
-      />Delete Agent
+      <div className="center-box column">
+        <AgentForm
+          data={formData}
+          selectedOption={selectedOption}
+          handleChange={(event) => handleChange(event, setFormData)}
+          handleOptionChange={(event) => handleOptionChange(event, setSelectedOption)}
+          submit={(event) => editAgent(event)}
+          />
+        <button 
+          className="edit-delete-btn"
+          onClick={deleteAgent}
+          >Delete Agent</button>
+      </div>
     </div>
   )
 }

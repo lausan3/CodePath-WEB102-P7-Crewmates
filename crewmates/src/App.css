@@ -94,6 +94,15 @@
   justify-content: space-evenly;
 }
 
+
+/* EDIT AGENT */
+
+.edit-delete-btn {
+  width: 150px;
+  
+  background-color: firebrick;
+}
+
 /* CARDS */
 
 .card-link {
@@ -118,5 +127,11 @@
 /* EXTRA */
 
 .center-box {
+  display: flex;
+  justify-content: center;
   align-items: center;
+}
+
+.column {
+  flex-direction: column;
 }

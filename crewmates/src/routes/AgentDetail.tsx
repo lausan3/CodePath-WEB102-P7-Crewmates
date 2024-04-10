@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import { supabase } from "../client";
 
 import { AgentData } from "../interfaces/interfaces";
@@ -34,6 +34,7 @@ const AgentDetail = () => {
     <div className="main-ctn">
       <h2>{agentData.name}, {agentData.role}</h2>
       <h3>{agentData.description}</h3>
+      <Link to={`/list/edit/${agentId}`}>Edit Agent</Link>
     </div>
   )
 }
