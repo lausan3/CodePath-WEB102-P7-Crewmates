@@ -10,7 +10,7 @@ const EditAgent = () => {
   const params = useParams();
   const agentId = params.id;
   const navigate = useNavigate();
-  const [formData, setFormData] = useState<AgentData>({ name: "", description: "", role: "" });
+  const [formData, setFormData] = useState<AgentData>({ name: "", description: "", role: "", color: ""});
   const [selectedOption, setSelectedOption] = useState("");
 
   // Fetch agent details for id
@@ -24,8 +24,8 @@ const EditAgent = () => {
       if (!data || data.length <= 0) {
         console.error("Couldn't find an entry for " + agentId) + ".";
       } else {
-        const { name, description, role } = data[0];
-        setFormData({ name: name, description: description, role: role })
+        const { name, description, role, color } = data[0];
+        setFormData({ name: name, description: description, role: role, color: color})
       }
     }
 

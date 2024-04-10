@@ -37,13 +37,21 @@ const CreateAgent = () => {
 
   return (
     <div className="main-ctn">
-      <AgentForm
-        data={formData} 
-        selectedOption={selectedOption} 
-        handleChange={(event) => handleChange(event, setFormData)}
-        handleOptionChange={(event) => handleOptionChange(event, setSelectedOption)} 
-        submit={(event) => createAgent(event)}
-      />
+      <div className="create-ctn">
+        <h1>Create a new Agent!</h1>
+        <img 
+          src="../../071123_Val_EP7_China_CG_Banner.webp"
+          width="600"
+          height="337"
+        />
+        <AgentForm
+          data={formData} 
+          selectedOption={selectedOption} 
+          handleChange={(event) => handleChange(event, setFormData)}
+          handleOptionChange={(event) => handleOptionChange(event, setSelectedOption)} 
+          submit={(event) => createAgent(event)}
+        />
+      </div>
     </div>
   )
 }

@@ -18,38 +18,59 @@ const AgentForm = ({data, selectedOption, handleChange, handleOptionChange, subm
       </textarea>
       <br/>
       
-      <input
-        type="radio"
-        name="option"
-        value="Duelist"
-        checked={selectedOption === 'Duelist'}
-        onChange={handleOptionChange}
-      />
-      Duelist
-      <input
-        type="radio"
-        name="option"
-        value="Initiator"
-        checked={selectedOption === 'Initiator'}
-        onChange={handleOptionChange}
-      />
-      Initiator
-      <input
-        type="radio"
-        name="option"
-        value="Controller"
-        checked={selectedOption === 'Controller'}
-        onChange={handleOptionChange}
-      />
-      Controller
-      <input
-        type="radio"
-        name="option"
-        value="Sentinel"
-        checked={selectedOption === 'Sentinel'}
-        onChange={handleOptionChange}
-      />
-      Sentinel
+      <div className="create-form-role">
+
+        <div>
+          <input
+            className="create-form-role-radio"
+            id="duelist"
+            type="radio"
+            name="role"
+            value="Duelist"
+            checked={selectedOption === 'Duelist'}
+            onChange={handleOptionChange}
+          />
+          <label className="create-form-role-label" htmlFor="duelist">Duelist</label>
+        </div>
+        <div>
+          <input
+            className="create-form-role-radio"
+            id="initiator"
+            type="radio"
+            name="role"
+            value="Initiator"
+            checked={selectedOption === 'Initiator'}
+            onChange={handleOptionChange}
+          />
+          <label className="create-form-role-label" htmlFor="initiator">Initiator</label>
+        </div>
+        <div>
+          <input
+            className="create-form-role-radio"
+            id="controller"
+            type="radio"
+            name="role"
+            value="Controller"
+            checked={selectedOption === 'Controller'}
+            onChange={handleOptionChange}
+          />
+          <label className="create-form-role-label" htmlFor="controller">Controller</label>
+        </div>
+        <div>
+
+          <input
+            className="create-form-role-radio"
+            id="sentinel"
+            type="radio"
+            name="role"
+            value="Sentinel"
+            checked={selectedOption === 'Sentinel'}
+            onChange={handleOptionChange}
+          />
+          <label className="create-form-role-label" htmlFor="sentinel">Sentinel</label>
+        </div>
+
+      </div>
 
       <input type="submit" value="Submit" onClick={submit} />
     </form>

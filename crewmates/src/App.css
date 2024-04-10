@@ -16,18 +16,39 @@
 
 .layout {
   display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+  width: 100vw;
+}
+
+.layout-bottom {
+  display: flex;
   flex-direction: row;
-
-  column-gap: 30px;
 }
 
 
-/* GENERAL */
+/* TOP NAV */
 
-.block {
-  display: block;
+.topnav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  column-gap: 10px;
+
+  padding: 10px 15px;
+
+  max-height: 75px;
 }
 
+.topnav h2 {
+  margin: 0 0;
+
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
 
 /* SIDEBAR */
 
@@ -51,6 +72,27 @@
   background-color: rgba(255, 255, 255, 0.216);
 }
 
+.sidebar-btn {
+  display: flex;
+  height: 50px;
+  width: 50px;
+  justify-content: center;
+  overflow: visible;
+  
+  border-radius: 17px;
+
+  transition: background-color 250ms;
+}
+
+.sidebar-btn:hover {
+  background-color: rgba(220, 220, 220, 0.178);
+  border: none;
+}
+
+.sidebar-btn img {
+  filter: invert(1);
+}
+
 
 /* MAIN CONTAINER */
 
@@ -63,7 +105,7 @@
 }
 
 
-/* CREATE AGENT */
+/* CREATE FORM */
 
 .create-form {
 
@@ -73,14 +115,29 @@
 
 }
 
-.create-form input {
+.create-form-role {
+  padding: 10px;
+  margin: 10px 10px;
+}
 
+.create-form-role-label {
+  margin: 0.4rem;
+}
+
+.create-form-role-radio {
+  
 }
 
 .create-form textarea {
   
 }
 
+
+/* CREATE AGENT */
+
+.create-ctn {
+  max-width: 1000px;
+}
 
 /* LIST AGENT */
 
@@ -122,6 +179,8 @@
   padding: 1.5rem 2rem;
 
   background-color: rgba(139, 160, 178, 0.759);
+
+  box-shadow: 10px 5px 20px 0px green;
 }
 
 /* EXTRA */
@@ -134,4 +193,18 @@
 
 .column {
   flex-direction: column;
+}
+
+.block {
+  display: block;
+}
+
+.rainbow {
+  box-shadow: 7px -5px 10px #4c0082b6, 
+              11px -9px 10px #0000ff71, 
+              16px -14px 10px #00ff007d, 
+              20px -17px 10px #ffff0093, 
+              24px -19px 10px #ff8000d7, 
+              27px -23px 10px #eb1818af, 
+              5px 5px 15px 5px #0000;
 }

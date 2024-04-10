@@ -1,7 +1,8 @@
 export interface AgentData {
     name: string,
     description: string,
-    role: string
+    role: string,
+    color: string
 }
 
 export interface DBData {
@@ -10,4 +11,5 @@ export interface DBData {
     description: string,
     role: string
     created_at: string,
+    color: string
 }
