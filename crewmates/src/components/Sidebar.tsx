@@ -1,10 +1,6 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom'
-import ShowSidebarButton from './ShowSidebarButton';
 
 const Sidebar = () => {
-  const [showSidebar, setShowSidebar] = useState(false);
-  
   return (
     <div className="sidebar">
       <Link className='sidebar-link' to='/'>🏠 Home</Link>

@@ -60,7 +60,7 @@
   display: block;
 
   padding: 15px 10px;
-  /* margin: 20px; */
+  margin: 10px 10px;
   border-radius: 10px;
 
   transition: 
@@ -91,6 +91,26 @@
 
 .sidebar-btn img {
   filter: invert(1);
+}
+
+.mini-sidebar {
+  width: 80px;
+}
+
+.mini-sidebar-link {
+  display: block;
+
+  padding: 15px 0px;
+  margin: 10px 10px;
+  border-radius: 10px;
+
+  transition: 
+    background-color 250ms;
+}
+
+.mini-sidebar-link:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.216);
 }
 
 
