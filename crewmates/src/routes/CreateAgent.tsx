@@ -37,7 +37,7 @@ const CreateAgent = () => {
 
   return (
     <div className="main-ctn">
-      <div className="create-ctn">
+      <div className="center-box column">
         <h1>Create a new Agent!</h1>
         <img 
           src="../../071123_Val_EP7_China_CG_Banner.webp"

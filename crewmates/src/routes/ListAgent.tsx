@@ -42,7 +42,7 @@ const ListAgent = () => {
 
   return (
     <div className="main-ctn">
-      <h3>List</h3>
+      <h1>Agents</h1>
       <div className="center-box">
         <div className="list-ctn">
           {
